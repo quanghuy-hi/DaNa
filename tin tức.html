@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Trang tin tức du lịch Đà Nẵng - Khám phá các điểm đến nổi bật và các trải nghiệm không thể bỏ qua khi du lịch Đà Nẵng">
+    <title>Trang Tin Tức</title>
+    <link rel="stylesheet" href="style.css"> <!-- Liên kết với file CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"> <!-- Google Font -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        #navbar {
+            overflow: hidden;
+            background-color: transparent;
+            padding: 50px 10px;
+            transition: 0.4s;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 99;
+        }
+        #navbar a {
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 18px; 
+            line-height: 25px;
+            border-radius: 4px;
+            position: relative;
+            transition: color 0.3s;
+        }
+        #navbar a::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 5px;
+            transform: translateX(-50%) scaleX(0);
+            transform-origin: center;
+            width: 80%;
+            height: 2px;
+            background-color: currentColor;
+            transition: transform 0.4s ease;
+        }
+        #navbar a:hover::after {
+            transform: translateX(-50%) scaleX(1);
+        }
+        #navbar #logo {
+            font-size: 35px;
+            font-weight: bold;
+            transition: 0.4s;
+            padding-left: 10%;
+            text-decoration: none;
+        }
+        #navbar #logo:hover {
+            text-decoration: none;
+        }
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 10px;
+            position: absolute;
+            top: 25px;
+            left: 10px;
+            z-index: 100;
+        }
+        .hamburger-menu .bar {
+            width: 30px;
+            height: 4px;
+            margin: 5px;
+            background-color: white;
+            border-radius: 5px;
+        }
+        #navbar.scrolled .hamburger-menu .bar {
+            background-color: black; /* Khi cuộn, thay đổi màu thanh ngang thành đen */
+        }                       
+        #navbar-right {
+            float: left;
+            padding-left: 10%;
+        }
+        #navbar-right a {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        #navbar.scrolled {
+            background-color: #f1f1f1;
+        }
+        #navbar.scrolled a,
+        #navbar.scrolled #logo {
+            color: black;
+        }
+        @media screen and (max-width: 580px) {
+        #navbar.scrolled a {
+            color: white;
+        }
+        #navbar-right {
+            display: none;
+        }
+        #navbar-right.open {
+            display: flex;
+            flex-direction: column; /* Hiển thị menu dọc */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100%;
+            background-color: #333;
+            padding-top: 80px;
+            z-index: 100;
+        }
+        #navbar-right a {
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+        }
+        #navbar-right a:hover {
+            background-color: #444;
+        }
+        .hamburger-menu {
+            display: flex;
+        }
+        #logo {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .hero {
+            background-position: top center; /* Căn ảnh lên trên để hiển thị các yếu tố quan trọng */
+        }
+        }
+        #navbar #logo:hover::after {
+            transform: scaleX(0); /* Không hiển thị gạch dưới khi hover vào logo */
+        }
+        .hero {
+            background-image: url('https://vietnamtravelmart.com.vn/wp-content/uploads/images1248012-unnamed-1468255588101.jpg');  
+            background-size: cover;
+            background-position: center center;
+            height: 100vh;  /* Chiều cao chiếm toàn bộ chiều cao của màn hình */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .search-container input {
+            width: 80%;
+            padding: 10px;
+            font-size: 1em;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .article {
+            background-color: white;
+            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .article:hover {
+            transform: translateY(-10px);
+        }
+        .article h2 {
+            font-size: 1.8em;
+            margin: 15px 0;
+        }
+        .article p {
+            font-size: 1em;
+            color: #555;
+        }
+        .article a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .article img {
+            width: 100%;
+            height: 250px; /* Chiều cao cố định */
+            object-fit: cover; /* Đảm bảo ảnh không bị biến dạng, mà vẫn đầy đủ */
+            border-radius: 8px;
+        }
+        footer {
+            background: #111111bb;
+            color: #eee;
+            display: flex;
+            justify-content: space-around;
+            padding: 40px 20px;
+        }
+        footer div {
+            max-width: 300px;
+            cursor: pointer;
+        }
+        footer h3 {
+            margin-bottom: 10px;
+        }
+        footer img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            margin: 2px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        .logo span {
+            color: orange;
+            margin-left: 10px;
+        }
+        footer .tour-image-wrapper {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+            margin: 2px;
+            width: 60px;
+            height: 60px;
+            border-radius: 4px;
+        }
+        footer .tour-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        footer .tour-image-wrapper:hover img {
+            transform: scale(1.1);
+        }
+        footer .heart-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid white;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            transition: background 0.3s ease;
+            pointer-events: auto;
+            cursor: pointer;
+        }
+        footer .heart-icon:hover {
+            background: red;
+            border: 2px solid red;
+        }
+        footer .tour-image-wrapper:hover .heart-icon {
+            display: flex;
+        }
+        footer .heart-icon::before {
+            content: "❤";
+            color: white;
+            font-size: 16px;
+        }
+        @media (max-width: 768px) {
+            footer {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .logo {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+
+            footer div {
+                text-align: center;
+                max-width: 100%;
+            }
+
+            footer .tour-image-wrapper {
+                width: 50px;
+                height: 50px;
+            }
+
+            footer .tour-image-wrapper img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            footer {
+                padding: 20px;
+            }
+
+            footer img {
+                width: 50px;
+                height: 50px;
+            }
+
+            footer .tour-image-wrapper {
+                width: 45px;
+                height: 45px;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            footer div {
+                margin-bottom: 10px;
+            }
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            nav a {
+                padding: 12px 20px;
+            }
+            .search-container input {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+  <div id="navbar">
+    <a href="#default" id="logo">Travel</a>
+    <div id="navbar-right">
+        <a href="index.html">Trang chủ</a>
+        <a href="khách sạn.html">Khách sạn</a>
+        <a href="dịch vụ.html">Dịch vụ</a>
+        <a href="tin tức.html">Tin tức</a>
+        <a href="giới thiệu.html">Giới thiệu</a>
+        <a href="liên hệ.html">Liên hệ</a>    
+    </div>
+    <div id="hamburger" class="hamburger-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+  </div>
+  <script>
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+      const navbar = document.getElementById("navbar");
+      const logo = document.getElementById("logo");
+      const authButtons = document.querySelector('.auth-buttons');
+
+      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+        navbar.style.padding = "30px 10px";
+        logo.style.fontSize = "25px";
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.style.padding = "50px 10px";
+        logo.style.fontSize = "35px";
+        navbar.classList.remove("scrolled");
+      }
+    }
+  </script>
+  <section class="hero"></section>
+
+    <div class="search-container">
+        <input type="text" placeholder="Tìm kiếm thông tin du lịch Đà Nẵng...">
+    </div>
+
+    <div class="container">
+        <div class="article">
+            <img src="https://i2.ex-cdn.com/crystalbay.com/files/content/2024/07/31/ba-na-hills-2-1509.jpg" alt="Bà Nà Hills">
+            <h2>Khám Phá Bà Nà Hills: Nơi Giao Thoa Giữa Thiên Nhiên Và Con Người</h2>
+            <p>Bà Nà Hills là một trong những điểm đến nổi bật nhất tại Đà Nẵng, nổi tiếng với cáp treo dài nhất thế giới và cầu vàng độc đáo...</p>
+            <a href="#">Đọc thêm...</a>
+        </div>
+        <div class="article">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtSoGrYeuET6lkVCfrukikENIMEZQ4DgWQ3Q&s" alt="Bãi Biển Mỹ Khê">
+            <h2>Trải Nghiệm Tại Bãi Biển Mỹ Khê: Một Thiên Đường Biển Xanh</h2>
+            <p>Bãi biển Mỹ Khê là một trong những bãi biển đẹp nhất ở Đà Nẵng, với cát trắng mịn và làn nước trong xanh, lý tưởng cho kỳ nghỉ dưỡng...</p>
+            <a href="#">Đọc thêm...</a>
+        </div>
+        <div class="article">
+            <img src="https://furamavietnam.com/wp-content/uploads/2024/11/Furama-Resort-Danang-Sightseeing-Dragon-Brigde-2-1024x576.jpg" alt="Cầu Rồng Đà Nẵng">
+            <h2>Cầu Rồng Đà Nẵng: Biểu Tượng Độc Đáo Của Thành Phố</h2>
+            <p>Cầu Rồng là một trong những công trình kiến trúc nổi bật của Đà Nẵng, với khả năng phun lửa và nước vào cuối tuần, thu hút hàng nghìn du khách mỗi ngày...</p>
+            <a href="#">Đọc thêm...</a>
+        </div>
+        <div class="article">
+            <img src="https://i2.ex-cdn.com/crystalbay.com/files/content/2024/10/02/am-thuc-da-nang-1615.jpg" alt="Ẩm Thực Đà Nẵng">
+            <h2>Khám Phá Ẩm Thực Đà Nẵng: Những Món Ăn Không Thể Bỏ Qua</h2>
+            <p>Đà Nẵng nổi tiếng với những món ăn đặc sắc như mì quảng, bánh tráng cuốn thịt heo, và hải sản tươi ngon...</p>
+            <a href="#">Đọc thêm...</a>
+        </div>
+    </div>
+
+    <footer>
+      <div class="logo">Travel<span>✈️</span></div>
+      <div>
+          <h3>Liên hệ</h3>
+          <p>địa chỉ</p>
+          <p>sđt</p>
+          <p>mail</p>
+          <p>Facebook | Instagram | Twitter</p>
+      </div>
+      <div>
+        <h3>Tin Tức</h3>
+        <p>Bản tin Du Lịch Việt</p>
+        <p>Cẩm nang du lịch</p>
+        <p>Tư vấn du lịch</p>
+        <p>Tuyển dụng Đại Lý</p>
+      </div>
+      <div>
+        <h3>Tour Phổ Biến</h3>
+        <div class="tour-image-wrapper">
+          <img src="https://mauweb.monamedia.net/travelvn/wp-content/uploads/2019/01/den-long.jpg" alt="">
+          <div class="heart-icon"></div>
+        </div>
+        <div class="tour-image-wrapper">
+          <img src="https://mauweb.monamedia.net/travelvn/wp-content/uploads/2019/01/cuoi.jpg" alt="">
+          <div class="heart-icon"></div>
+        </div>
+        <div class="tour-image-wrapper">
+          <img src="https://mauweb.monamedia.net/travelvn/wp-content/uploads/2019/01/hoa-dang.jpg" alt="">
+          <div class="heart-icon"></div>
+        </div>
+        <br>
+        <div class="tour-image-wrapper">
+          <img src="https://mauweb.monamedia.net/travelvn/wp-content/uploads/2019/01/doi-che.jpg" alt="">
+          <div class="heart-icon"></div>
+        </div>
+        <div class="tour-image-wrapper">
+          <img src="https://mauweb.monamedia.net/travelvn/wp-content/uploads/2019/01/2-19.jpg" alt="">
+          <div class="heart-icon"></div>
+        </div>
+        <div class="tour-image-wrapper">
+          <img src="https://mauweb.monamedia.net/travelvn/wp-content/uploads/2019/01/bana5.jpg" alt="">
+          <div class="heart-icon"></div>
+        </div>
+      </div>    
+    </footer>
+
+    <script>
+      // Kích hoạt menu khi click vào nút hamburger
+      document.getElementById('hamburger').addEventListener('click', function (event) {
+          event.stopPropagation(); // Ngừng sự kiện bọt lên
+          const navbarRight = document.getElementById('navbar-right');
+          navbarRight.classList.toggle('open');
+      });
+
+      // Đóng menu khi click ra ngoài
+      document.addEventListener('click', function (event) {
+          const navbarRight = document.getElementById('navbar-right');
+          const hamburger = document.getElementById('hamburger');
+          if (!navbarRight.contains(event.target) && !hamburger.contains(event.target)) {
+              navbarRight.classList.remove('open');
+          }
+      });
+
+      // Đóng menu khi click vào mục trong navbar
+      const navLinks = document.querySelectorAll('#navbar-right a');
+      navLinks.forEach(link => {
+          link.addEventListener('click', function () {
+              const navbarRight = document.getElementById('navbar-right');
+              navbarRight.classList.remove('open');
+          });
+      });
+  </script>
+
+</body>
+</html>
