@@ -1,29 +1,25 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Trang web giới thiệu về Đà Nẵng">
-    <title>Trang Giới Thiệu</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-
-        #navbar {
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang Giới Thiệu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      margin: 30px;
+    }
+    #navbar {
             overflow: hidden;
-            background-color: transparent;
-            padding: 50px 10px;
+            background-color: #D3B795;
+            padding: 40px 10px;
             transition: 0.4s;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 99;
+            margin-left: -50px;
         }
         #navbar a {
             float: left;
@@ -141,34 +137,172 @@
         #navbar #logo:hover::after {
             transform: scaleX(0); /* Không hiển thị gạch dưới khi hover vào logo */
         }
-        .hero {
-            background-image: url('https://duonggiahotel.vn/wp-content/uploads/2023/11/dia-diem-du-lich-da-nang-avt.jpg');  
-            background-size: cover;
-            background-position: center center;
-            height: 100vh;  /* Chiều cao chiếm toàn bộ chiều cao của màn hình */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
+    .container {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      margin-top: 120px;
+    }
+    .text-box {
+      flex: 1;
+      max-width: 40%;
+    }
+    .text-box h2 {
+      color: #d35400;
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+    .text-box p {
+      font-size: 20px;
+      line-height: 1.6;
+      text-align: justify;
+    }
+    .image-box {
+      flex: 1;
+      max-width: 50%;
+    }
+    .image-box img {
+      width: 773;
+      height: 470;
+      border-radius: 8px;
+    }
+    .section {
+      width: 100%;
+      font-family: Arial, sans-serif;
+      margin-top: 30px;
+    }
+    .image-container {
+      width: 100%;
+    }
+    .image-container img {
+      width: 1256px;
+      height: 584px;
+      border-radius: 8px;
+    }
+    .caption {
+      margin-top: 16px;
+      font-size: 20px;
+      line-height: 1.6;
+      color: #333;
+      text-align: justify;
+    }
+    .container1 {
+      width: 100%;
+      margin: 40px auto;
+      font-family: Arial, sans-serif;
+    }
+    .image-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .image-row img {
+      width: 32%;
+      border-radius: 6px;
+      object-fit: cover;
+    }
 
-        section {
-            padding: 20px;
-        }
+    #h2 {
+      color: #d35400;
+      text-align: center;
+      font-size: 30px;
+    }
 
-        h2 {
-            color: black;
-        }
-        p  {
-            color: black;
-            font-size: 18px;
-        }
+    .timeline {
+      position: relative;
+      margin: 50px auto;
+      padding: 20px 0;
+      width: 600px;
+    }
+
+    .line {
+      position: absolute;
+      width: 4px;
+      background-color: #d35400;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 0;
+    }
+
+    .event {
+      position: relative;
+      margin: 50px 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .text-container {
+      width: 40%;
+      text-align: center;
+    }
+
+    .text-container .text {
+      font-weight: bold;
+      cursor: pointer;
+      color: #333;
+      font-size: 20px;
+    }
+
+    .text-container .subheading {
+      margin-top: 8px;
+      font-style: italic;
+      color: #555;
+      display: none;
+      font-size: 18px;
+      text-align: left;
+    }
+
+    .event .image {
+      width: 40%;
+    }
+
+    .event img {
+      width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+    }
+
+    .dot {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      background-color: #d87300;
+      border-radius: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 0;
+      z-index: 1;
+    }
+    @media (max-width: 580px) {
+      .event {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .text-container, .event .image {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .text-container .subheading {
+        max-width: 100%;
+      }
+    }
         footer {
             background: #111111bb;
             color: #eee;
             display: flex;
             justify-content: space-around;
             padding: 40px 20px;
+            margin-left: -50px;
+            margin-right: -50px;
+            margin-bottom: -50px;
         }
         footer div {
             max-width: 300px;
@@ -290,162 +424,127 @@
                 margin-bottom: 10px;
             }
         }
-
-        .content-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: white;
-        }
-
-        .gallery {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin: 0 auto;
-        }
-
-        .gallery img {
-            width: 30%;
-            height: auto;
-            border-radius: 8px;
-        }
-
-        @media screen and (max-width: 768px) {
-        .gallery {
-            flex-direction: column; /* Đặt các ảnh thành hàng dọc */
-            align-items: center; /* Căn giữa các ảnh theo chiều dọc */
-        }
-        
-        .gallery img {
-            width: 80%;
-            margin-bottom: 20px; 
-        }
-        }
-        @media screen and (max-width: 480px) {
-            .gallery img {
-                width: 90%;
-            }
-        }
-
-        .services {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-        }
-
-        .service-box {
-            background-color: #ddd;
-            padding: 20px;
-            width: 30%;
-            text-align: center;
-        }
-
-        .service-box h3 {
-            margin-top: 0;
-            font-size: 20px;
-        }
-        @media (max-width: 768px) {
-            .services {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .service-box {
-                width: 80%; /* Increase width to 80% of the container */
-                margin-bottom: 20px; /* Add space between boxes */
-            }
-        }
-    </style>
+  </style>
 </head>
-
 <body>
-    <div id="navbar">
-        <a href="#default" id="logo">Travel</a>
-        <div id="navbar-right">
-            <a href="index.html">Trang chủ</a>
-            <a href="khách sạn.html">Khách sạn</a>
-            <a href="dịch vụ.html">Dịch vụ</a>
-            <a href="tin tức.html">Tin tức</a>
-            <a href="giới thiệu.html">Giới thiệu</a>
-            <a href="liên hệ.html">Liên hệ</a>    
+  <div id="navbar">
+    <a href="#default" id="logo">Travel</a>
+    <div id="navbar-right">
+        <a href="index.html">Trang chủ</a>
+        <a href="khách sạn.html">Khách sạn</a>
+        <a href="dịch vụ.html">Dịch vụ</a>
+        <a href="tin tức.html">Tin tức</a>
+        <a href="giới thiệu.html">Giới thiệu</a>
+        <a href="liên hệ.html">Liên hệ</a>    
+    </div>
+    <div id="hamburger" class="hamburger-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+  </div>
+  <script>
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+      const navbar = document.getElementById("navbar");
+      const logo = document.getElementById("logo");
+      const authButtons = document.querySelector('.auth-buttons');
+
+      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+        navbar.style.padding = "30px 10px";
+        logo.style.fontSize = "25px";
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.style.padding = "40px 10px";
+        logo.style.fontSize = "35px";
+        navbar.classList.remove("scrolled");
+      }
+    }
+  </script>
+
+  <div class="container">
+    <div class="text-box">
+      <h2>Tổng quan về Đà Nẵng</h2>
+      <p>
+        Đà Nẵng – thành phố nằm bên dòng sông Hàn thơ mộng – là một trung tâm kinh tế, văn hóa và du lịch hàng đầu miền Trung Việt Nam. Với vị trí địa lý đắc địa giữa trục Bắc – Nam và nằm trên hành lang kinh tế Đông – Tây, Đà Nẵng từ lâu đã đóng vai trò chiến lược quan trọng, là cửa ngõ giao thương sôi động từ thế kỷ XVI. Nơi đây từng là thương cảng lớn dưới thời nhà Nguyễn và là điểm đầu tiên mà thực dân Pháp và quân đội Mỹ lựa chọn khi xâm nhập Việt Nam, cho thấy vị thế đặc biệt của thành phố này trong lịch sử.
+      </p>
+    </div>
+    <div class="image-box">
+      <img src="1.jpg" alt="Đà Nẵng">
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="image-container">
+      <img src="2.jpg" alt="Toàn cảnh Đà Nẵng">
+    </div>
+    <div class="caption">
+        Từ năm 1997, khi chính thức trở thành thành phố trực thuộc trung ương, Đà Nẵng đã có bước phát triển vượt bậc. Thành phố đầu tư mạnh vào hạ tầng, công nghiệp công nghệ cao, dịch vụ, giáo dục và y tế hiện đại. Với sân bay quốc tế, cảng biển nước sâu Tiên Sa, cùng hệ thống đường bộ, đường sắt thuận tiện, Đà Nẵng là đầu mối giao thông quan trọng kết nối trong nước và quốc tế.
+    </div>
+  </div>
+
+  <div class="container1">
+    <div class="image-row">
+      <img src="3.jpg" alt="Bà Nà Hills">
+      <img src="4.jpg" alt="Sơn Trà">
+      <img src="5.jpg" alt="Hội An">
+    </div>
+    <div class="caption">
+        Không chỉ là thành phố công nghiệp năng động, Đà Nẵng còn được biết đến là “thành phố đáng sống” với môi trường xanh – sạch – đẹp, người dân thân thiện, và hệ sinh thái du lịch đa dạng. Bao quanh bởi những di sản thế giới như Huế, Hội An và Mỹ Sơn, lại sở hữu nhiều danh lam thắng cảnh như Bà Nà Hills, Ngũ Hành Sơn, bán đảo Sơn Trà, Đà Nẵng ngày càng trở thành điểm đến hấp dẫn cho du khách trong và ngoài nước.
+        Ngày nay, Đà Nẵng đang vươn mình trở thành một trung tâm phát triển bền vững, hiện đại, góp phần quan trọng vào sự phát triển chung của cả khu vực miền Trung – Tây Nguyên và cả nước.
+    </div>
+  </div>
+
+  <h2 id="h2">Lịch sử hình thành Đà Nẵng</h2>
+
+      <div class="timeline">
+        <div class="line"></div>
+    
+        <div class="event">
+          <div class="text-container">
+            <div class="text" onclick="toggleSubheading(this)">THẾ KỶ XVI</div>
+            <div class="subheading">Giữa thế kỷ XVI, khi Hội An đã là trung tâm buôn bán sầm uất ở phía Nam thì Đà Nẵng mới là vị trí tiền cảng, trung chuyển hàng hóa, tu sửa tàu thuyền.</div>
+          </div>
+          <div class="image"><img src="16.jpg" alt="Thế kỷ 16"></div>
+          <div class="dot"></div>
         </div>
-        <div id="hamburger" class="hamburger-menu">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
+    
+        <div class="event">
+          <div class="image"><img src="18.jpg" alt="Thế kỷ 18"></div>
+          <div class="text-container">
+            <div class="text" onclick="toggleSubheading(this)">THẾ KỶ XVIII</div>
+            <div class="subheading">Năm 1835, khi vua Minh Mạng có dụ: 'Tàu Tây chỉ được đậu tại cửa Hàn, còn các cửa biển khác không được tới buôn bán' thì Đà Nẵng trở thành một thương cảng lớn bậc nhất miền Trung. Tiểu thủ công nghiệp địa phương phát triển với những ngành sửa chữa tàu thuyền, sơ chế nông lâm hải sản; dịch vụ thương mại cũng phát đạt. <br>
+ 
+                Sau khi xâm chiếm toàn bộ đất nước ta vào năm 1889, thực dân Pháp tách Đà Nẵng khỏi Quảng Nam và đổi tên thành Tourane, chịu sự cai quản trực tiếp của Toàn quyền Đông Dương.</div>
+          </div>
+          <div class="dot"></div>
+        </div>
+    
+        <div class="event">
+          <div class="text-container">
+            <div class="text" onclick="toggleSubheading(this)">THẾ KỶ XX</div>
+            <div class="subheading">Năm 1950, Pháp trao trả Đà Nẵng cho chính quyền Bảo Đại. <br>
+ 
+                Tháng 3/1965 các đơn vị thủy quân lục chiến Mỹ đổ bộ vào Đà Nẵng và thiết lập ở đây một căn cứ quân sự hỗn hợp lớn. <br>
+            
+                 Năm 1967, Đà Nẵng được Mỹ ngụy ấn định là thành phố trực thuộc Trung ương, trung tâm chính trị – quân sự – văn hóa cho vùng I và II chiến thuật. Mỹ đầu tư mạnh vào hạ tầng và công nghiệp, đặc biệt tại khu kỹ nghệ Hòa Khánh. Tuy nhiên, chiến tranh gây hậu quả nghiêm trọng: người dân phải sơ tán, tệ nạn xã hội gia tăng, sản xuất trì trệ. <br>
+             
+                 Năm 1975, sau khi hòa bình lập lại, Đà Nẵng bắt đầu khôi phục hậu quả chiến tranh và dù gặp nhiều khó khăn, thành phố vẫn đạt được nhiều thành tựu, đặc biệt từ sau Đổi mới năm 1986. <br>
+             
+                Ngày 6/11/1996, Quốc hội khóa IX quyết định tách Quảng Nam – Đà Nẵng thành hai đơn vị: tỉnh Quảng Nam và thành phố Đà Nẵng trực thuộc Trung ương, gồm Đà Nẵng cũ, huyện Hòa Vang và huyện đảo Hoàng Sa.</div>
+          </div>
+          <div class="image"><img src="20.jpg" alt="Thế kỷ 20"></div>
+          <div class="dot"></div>
         </div>
       </div>
-      <script>
-        window.onscroll = function() {scrollFunction()};
-        
-        function scrollFunction() {
-          const navbar = document.getElementById("navbar");
-          const logo = document.getElementById("logo");
-          const authButtons = document.querySelector('.auth-buttons');
     
-          if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-            navbar.style.padding = "30px 10px";
-            logo.style.fontSize = "25px";
-            navbar.classList.add("scrolled");
-          } else {
-            navbar.style.padding = "50px 10px";
-            logo.style.fontSize = "35px";
-            navbar.classList.remove("scrolled");
-          }
+      <script>
+        function toggleSubheading(element) {
+          const sub = element.nextElementSibling;
+          sub.style.display = sub.style.display === "block" ? "none" : "block";
         }
       </script>
-      <section class="hero"></section>
-
-    <section id="about" class="content-container">
-        <h2>Giới thiệu về Đà Nẵng</h2>
-        <p>Đà Nẵng là một thành phố biển xinh đẹp, nằm ở miền Trung Việt Nam, nổi tiếng với các bãi biển tuyệt đẹp,
-            di tích lịch sử, và những khu nghỉ dưỡng sang trọng. Đây là điểm đến lý tưởng cho những ai yêu thích du
-            lịch thiên nhiên và khám phá văn hóa địa phương.</p>
-    </section>
-
-    <section id="attractions" class="content-container">
-        <h2>Điểm du lịch nổi bật</h2>
-        <div class="gallery">
-            <img src="https://cdn3.ivivu.com/2024/04/sun-world-ba-na-hills-ivivu37-1.jpg" alt="Bà Nà Hills">
-            <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/2001357730516/Ba-Na-Hills-%2528Vietnam-Golden-Bridge%2529---Day-Tour-fe2e456e-05a1-4081-96df-c8fff570575b.png?tr=q-60,c-at_max,w-1280,h-720&_src=imagekit" alt="Cầu Vàng">
-            <img src="https://owa.bestprice.vn/images/destinations/uploads/nui-ngu-hanh-son-5f59ac20e5100.jpg" alt="Ngũ Hành Sơn">
-        </div>
-        <p>Đà Nẵng có rất nhiều địa điểm du lịch hấp dẫn như Bà Nà Hills, Cầu Vàng, Ngũ Hành Sơn, và các bãi biển
-            tuyệt đẹp như Mỹ Khê, Non Nước. Ngoài ra, du khách cũng có thể tham quan các di tích lịch sử và văn hóa
-            đặc sắc của thành phố này.</p>
-    </section>
-
-    <section id="food" class="content-container">
-        <h2>Ẩm thực Đà Nẵng</h2>
-        <p>Ẩm thực Đà Nẵng mang đậm nét đặc trưng của vùng miền Trung với các món ăn như mì Quảng, bánh xèo,
-            bún chả cá, và các món hải sản tươi ngon. Du khách không thể bỏ qua những món ăn đặc sản này khi đến
-            thăm Đà Nẵng.</p>
-    </section>
-
-    <section id="services" class="content-container">
-        <h2>Dịch vụ du lịch tại Đà Nẵng</h2>
-        <div class="services">
-            <div class="service-box">
-                <h3>Khách sạn</h3>
-                <p>Cung cấp nhiều loại hình lưu trú từ khách sạn bình dân đến các resort cao cấp.</p>
-            </div>
-            <div class="service-box">
-                <h3>Tour du lịch</h3>
-                <p>Hướng dẫn và đặt tour du lịch tham quan các địa danh nổi tiếng tại Đà Nẵng.</p>
-            </div>
-            <div class="service-box">
-                <h3>Vận chuyển</h3>
-                <p>Cung cấp dịch vụ cho thuê xe, taxi, và các phương tiện di chuyển khác tại Đà Nẵng.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="content-container">
-        <h2>Liên hệ</h2>
-        <p>Để biết thêm thông tin, vui lòng liên hệ qua địa chỉ email: <a href="gido@gmail.com">gido@gmail.com</a> hoặc gọi đến số điện thoại: <strong>910jqk</strong>.</p>
-    </section>
 
     <footer>
         <div class="logo">Travel<span>✈️</span></div>
