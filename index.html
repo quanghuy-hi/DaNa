@@ -244,205 +244,7 @@
         padding: 30px;
     }
     #h2{font-size: 30px;}
-    #p1{font-size: 25px;}
-
-    .image-row {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 50px;
-      padding-left: 16%;
-    }
-    .image-container {
-      position: relative;
-      width: 300px;
-      height: 250px;
-      overflow: hidden;
-      border-radius: 10px;
-    }
-    .image-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s, opacity 0.5s;
-    }
-    .image-container:hover img {
-      transform: scale(1.1);
-    }
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    .image-container:hover .overlay {
-      opacity: 1;
-    }
-    .caption {
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
-      color: white;
-      font-size: 25px;
-      font-weight: bold;
-    }
-    @media (max-width: 580px) {
-    .image-row {
-      padding-left: 0;
-      flex-direction: column;
-      align-items: center;
-    }
-    .image-container {
-      width: 100%; 
-      height: 200px;
-      margin-bottom: 20px;
-    }
-  }
-
-    .new-background {
-        position: relative;
-        z-index: 2;
-        height: 100vh;
-        overflow: hidden;
-        margin-top: 250px;
-    }
-    .new-background-image {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        opacity: 0;
-        transition: opacity 1s ease-in-out;
-    }    
-    .new-background-image.active {
-            opacity: 1;
-    }
-    .new-background-content {
-        position: absolute;
-        top: 2%;
-        left: 15%;
-        text-align: center;
-        color: white;
-        z-index: 2;
-        opacity: 1;
-        transition: opacity 1s ease-in-out, top 1s ease-in-out, left 1s ease-in-out;
-    }
-    .new-background-content h1 {
-        font-size: 40px;
-    }
-    .new-background-content p {
-        font-size: 20px;
-        margin-top: 10px;
-    }
-    .image-row {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 3 ảnh trên mỗi hàng */
-        gap: 20px; /* Khoảng cách giữa các ảnh */
-        justify-content: center; /* Căn giữa ảnh theo chiều ngang */
-        align-items: center; /* Căn giữa theo chiều dọc */
-        width: fit-content;
-        margin-top: 50px;
-    }
-    .image-item {
-        width: 350px;         
-        height: 250px; 
-        object-fit: cover; 
-        border-radius: 10px; 
-    }
-    .card {
-        position: relative;
-        width: 300px;
-        height: 200px;
-        overflow: hidden;
-        border-radius: 10px;
-        cursor: pointer;
-        right: 50%;
-    }
-    .card img {
-        width: 100%;
-        height: 100%;
-        transition: transform 0.5s ease-in-out;
-    }
-    .card:hover img {        
-        transform: scale(1.1);
-    }
-    .overlay2 {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 50%;
-        background: rgba(255, 255, 255, 0.5);        
-        color: black;
-        font-weight: bold;
-        padding: 0;
-        opacity: 0;        
-        transition: opacity 0.5s ease-in-out;
-        }
-    .card:hover .overlay2 {
-        opacity: 1;
-    }
-    @media (max-width: 768px) {
-      .new-background-content h1 {
-        font-size: 30px;
-      }
-
-      .new-background-content p {
-        font-size: 16px;
-      }
-
-      .image-row {
-        grid-template-columns: repeat(2, 1fr); /* 2 ảnh trên mỗi hàng cho màn hình nhỏ */
-        gap: 15px;
-      }
-
-      .card {
-        width: 100%;
-        height: auto;
-      }
-
-      .image-item {
-        height: 200px; 
-      }
-
-      .new-background-content {
-        left: 10%;
-        width: 80%;
-      }
-    }
-
-    @media (max-width: 580px) {
-      .new-background-content h1 {
-        font-size: 24px;
-      }
-
-      .new-background-content p {
-        font-size: 14px;
-      }
-
-      .image-row {
-        grid-template-columns: 1fr; /* 1 ảnh trên mỗi hàng cho màn hình rất nhỏ */
-      }
-
-      .card {
-        width: 100%;
-        height: auto;
-      }
-
-      .image-item {
-        height: 180px;
-      }
-
-      .new-background-content {
-        left: 5%;
-        width: 90%;
-      }
-    }
+    #p1{font-size: 20px;}
 
     .gallery {
         display: flex;
@@ -529,7 +331,7 @@
     #h3{
         font-size: 16px;
     }
-    #p1{
+    #p11{
         font-size: 14px;
     }
     @media screen and (max-width: 768px) {
@@ -544,11 +346,11 @@
         height: 250px;
       }
 
-      #h2 {
-        font-size: 24px;
+      .item-text{
+        margin-top: 10px;
       }
 
-      #p1 {
+      #p11 {
         font-size: 20px;
       }
 
@@ -556,7 +358,7 @@
         font-size: 14px;
       }
 
-      #p1 {
+      #p11 {
         font-size: 12px;
       }
     }
@@ -569,11 +371,11 @@
         height: 200px;
       }
 
-      #h2 {
-        font-size: 20px;
+      .item-text{
+        margin-top: 10px;
       }
 
-      #p1 {
+      #p11 {
         font-size: 16px;
       }
 
@@ -586,8 +388,134 @@
         font-size: 12px;
       }
 
-      #p1 {
+      #p11 {
         font-size: 10px;
+      }
+    }
+
+    .container1 {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      line-height: 1.6;
+      background-color: #fdfdfd;
+    }
+    .container1 h2 {
+      display: flex;
+      align-items: center;
+      font-size: 1.5em;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .container1 h2::before {
+      content: "📖";
+      margin-right: 10px;
+    }
+    .section-title {
+      font-weight: bold;
+      margin-top: 20px;
+      color: #222;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+    .note {
+      background-color: #fff8dc;
+      border-left: 5px solid #ffc107;
+      padding: 10px;
+      margin-top: 20px;
+      font-size: 0.95em;
+    }
+    .note::before {
+      content: "🌟 Mẹo nhỏ: ";
+      font-weight: bold;
+    }
+    .more {
+      display: block;
+      text-align: center;
+      margin-top: 30px;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+    .more a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    .more a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 600px) {
+      .container1 {
+        margin: 10px;
+        padding: 15px;
+        font-size: 1em;
+      }
+      h2 {
+        font-size: 1.3em;
+      }
+    }
+
+    .lydo {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      margin: 0;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .lydo h2 {
+      color: #4b2c2c;
+      background-color: #f5e6e6;
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 8px;
+      margin: 0 auto;
+    }
+    .container2 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .no {
+      border: 2px solid black;
+      border-radius: 16px;
+      padding: 20px;
+      width: 100%;
+      max-width: 300px;
+      text-align: left;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+    .title {
+      font-weight: bold;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .title img {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+    }
+    .blue { color: #3498db; }
+    .green { color: #2ecc71; }
+    .teal { color: #1abc9c; }
+    @media (max-width: 580px) {
+      .lydo h2 {
+        font-size: 18px;
+        padding: 8px 16px;
+      }
+
+      .no {
+        width: 90%;
       }
     }
 
@@ -798,147 +726,43 @@
     <p id="p1">Chiêm ngưỡng tuyệt tác thiên nhiên</p>
   </div>
 
-  <div class="image-row" id="imageRow">
-    <div class="image-container">
+  <div class="gallery">
+    <div class="image-container1">
+        <img src="https://explore.danangairportterminal.vn/vn/wp-content/uploads/2023/07/Untitled-min.jpg" alt="Chùa Linh Ứng">
+        <div class="text">Chùa Linh Ứng</div>
+    </div>
+    <div class="image-container1">
+        <img src="https://ik.imagekit.io/tvlk/blog/2023/03/ran-nam-o-1.jpg?tr=q-70,c-at_max,w-500,h-300,dpr-2" alt="Rạn Nam Ô">
+        <div class="text">Rạn Nam Ô</div>
+    </div>
+    <div class="image-container1">
         <img src="https://dulichsontra.com/wp-content/uploads/2022/12/kinh-nghiem-du-lich-da-nang-bien-my-khe-1.jpg" alt="Biển Mỹ Khê">
-      <div class="overlay">
-        <div class="caption">Biển Mỹ Khê</div>
-      </div>
+        <div class="text">Biển Mỹ Khê</div>
     </div>
-    <div class="image-container">
-      <img src="https://statics.vinpearl.com/hai-van-pass-thumb_1648380282.jpg" alt="Đèo Hải Vân">
-      <div class="overlay">
-        <div class="caption">Đèo Hải Vân</div>
-      </div>
-    </div>
-    <div class="image-container">
-      <img src="https://banahills.sunworld.vn/wp-content/uploads/2024/01/chua-linh-ung-ba-na-1.jpg" alt="Bà Nà Hill">
-      <div class="overlay">
-        <div class="caption">Bà Nà Hill</div>
-      </div>
-    </div>
+  </div> 
+
+  <div class="box">
+    <h2 id="h2">Sự kiện đáng quan tâm</h2>
+    <p id="p1">Khám phá nét đẹp văn hóa lễ hội</p>
   </div>
 
-  <script>
-    const imageSets = [
-    [
-      "https://dulichsontra.com/wp-content/uploads/2022/12/kinh-nghiem-du-lich-da-nang-bien-my-khe-1.jpg",
-      "https://statics.vinpearl.com/hai-van-pass-thumb_1648380282.jpg",
-      "https://banahills.sunworld.vn/wp-content/uploads/2024/01/chua-linh-ung-ba-na-1.jpg"
-    ],
-    [
-      "https://mauweb.monamedia.net/travelvn/wp-content/uploads/2019/01/bana3.jpg",
-      "https://mauweb.monamedia.net/travelvn/wp-content/uploads/2019/01/bana4.jpeg",
-      "https://mauweb.monamedia.net/travelvn/wp-content/uploads/2019/01/hoian.jpg"
-    ],
-    [
-      "https://mauweb.monamedia.net/travelvn/wp-content/uploads/2019/01/my-son.jpg",
-      "https://mauweb.monamedia.net/travelvn/wp-content/uploads/2019/01/coco.jpg",
-      "https://mauweb.monamedia.net/travelvn/wp-content/uploads/2019/01/coco2.jpg"
-    ]
-  ];
-
-    const captionSets = [
-    ["Biển Mỹ Khê", "Đèo Hải Vân", "Bà Nà Hill"],
-    ["Bà Nà Hill", "Lâu đài Pháp", "Phố cổ Hội An"],
-    ["Thánh địa Mỹ Sơn", "COCOBAY", "Coco Beach"]
-  ];
-
-  let currentSet = 0;
-  const imageContainers = document.querySelectorAll('.image-container');
-
-  setInterval(() => {
-    currentSet = (currentSet + 1) % imageSets.length;
-    imageContainers.forEach((container, index) => {
-      const img = container.querySelector('img');
-      const caption = container.querySelector('.caption');
-      img.style.opacity = 0;
-      setTimeout(() => {
-        img.src = imageSets[currentSet][index];
-        caption.textContent = captionSets[currentSet][index];
-      }, 300);
-      img.onload = () => {
-        img.style.opacity = 1;
-      };
-    });
-  }, 7000);
-  </script>
-
-    <section class="new-background">
-        <div class="overlay3"></div>
-        <div class="new-background-image" style="background-image: url('https://gotrangtri.vn/wp-content/uploads/2018/12/kinh-thanh-hue-14.jpg');"></div>
-        <div class="new-background-content">
-            <h1>Khám Phá Mới</h1>
-            <p>ĐƠN GIẢN HÓA LỊCH TRÌNH KHÁM PHÁ</p>
-            <div class="image-row">
-                <div class="card">
-                    <img src="https://mauweb.monamedia.net/travelvn/wp-content/uploads/2019/01/den-long.jpg" alt="Điểm đến 1" class="image-item">
-                    <div class="overlay2">
-                        <h3>Phố đèn lồng Hội An</h3>
-                        <p>Giá: 6.000.000 đ</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://mauweb.monamedia.net/travelvn/wp-content/uploads/2019/01/2-19.jpg" alt="Điểm đến 2" class="image-item">
-                    <div class="overlay2">
-                        <h3>Tour ẩm thực xứ Quảng</h3>
-                        <p>Giá: 1.500.000 đ</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://mauweb.monamedia.net/travelvn/wp-content/uploads/2019/01/bana5.jpg" alt="Điểm đến 3" class="image-item">
-                    <div class="overlay2">
-                        <h3>Tour thượng ngoạn Bà Nà Hill</h3>
-                        <p>Giá: 59.000.000 đ</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://mauweb.monamedia.net/travelvn/wp-content/uploads/2019/01/doi-che.jpg" alt="Điểm đến 3" class="image-item">
-                    <div class="overlay2">
-                        <h3>Tham quan đồi chè Đông Giang</h3>
-                        <p>Giá: 5.000.000 đ</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://mauweb.monamedia.net/travelvn/wp-content/uploads/2019/01/cuoi.jpg" alt="Điểm đến 3" class="image-item">
-                    <div class="overlay2">
-                        <h3>Chụp ảnh cưới cầu tình yêu</h3>
-                        <p>Giá: 4.500.000 đ</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://mauweb.monamedia.net/travelvn/wp-content/uploads/2019/01/hoa-dang.jpg" alt="Điểm đến 3" class="image-item">
-                    <div class="overlay2">
-                        <h3>Lễ hội hoa đang Hội An</h3>
-                        <p>Giá: 1.000.000 đ</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>    
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-        const newBackground = document.querySelector(".new-background-image");
-        const newBackgroundContent = document.querySelector(".new-background-content");
-
-        // Đặt dữ liệu cho phần background mới
-        const newBackgroundData = {
-            title: "Khám Phá Mới",
-            subtitle: "Vịnh Hạ Long",
-            desc: "Trải nghiệm vẻ đẹp huyền bí của Vịnh Hạ Long, một trong những kỳ quan thiên nhiên thế giới.",
-        };
-
-        // Đảm bảo cập nhật nội dung của background mới khi chuyển
-        newBackground.classList.add("active");
-        newBackgroundContent.style.opacity = 1;
-        newBackgroundContent.querySelector("h1").textContent = newBackgroundData.title;
-        newBackgroundContent.querySelector("h2").textContent = newBackgroundData.subtitle;
-        newBackgroundContent.querySelector("p").textContent = newBackgroundData.desc;
-    });
-    </script>  
+  <div class="gallery">
+    <div class="image-container1">
+        <img src="https://danangfantasticity.com/wp-content/uploads/2025/03/le-hoi-phao-hoa-quoc-te-da-nang-diff-2025-tat-tan-tat-nhung-dieu-ban-can-biet-01.jpg" alt="Lễ hội bắn pháo hoa">
+        <div class="text">Lễ hội bắn pháo hoa</div>
+    </div>
+    <div class="image-container1">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX1c_3_88TVtXOTx09GE8s_ujq3Bwy1Tw2ig&s" alt="Lễ hội đua thuyền">
+        <div class="text">Lễ hội đua thuyền</div>
+    </div>
+    <div class="image-container1">
+        <img src="https://statics.vinpearl.com/lang-chieu-cam-ne-1_1634547168.jpg" alt="Làng nghề làm chiếu Cẩm Nê">
+        <div class="text">Làng nghề làm chiếu Cẩm Nê</div>
+    </div>
+</div>
 
     <div class="box">
-        <h2 id="h2">Thưởng thức đặc sản miền Trung</h2>
+        <h2 id="h2">Thưởng thức đặc sản Đà Nẵng</h2>
         <p id="p1">CẢM NHẬN TINH HOA ẨM THỰC</p>
     </div> 
 
@@ -981,7 +805,7 @@
         <div class="item">
             <div class="item-text">
                 <h3 id="h3">10 điểm du lịch tham quan hấp dẫn nhất</h3>
-                <p id="p1">Toạ lạc trên đảo Hòn Tre với những bãi biển trong xanh quanh năm, Vinpearl Land được biết đến như “thiên đường của miền nhiệt đới”</p>
+                <p id="p11">Toạ lạc trên đảo Hòn Tre với những bãi biển trong xanh quanh năm, Vinpearl Land được biết đến như “thiên đường của miền nhiệt đới”</p>
             </div>
         </div>
         <div class="item">
@@ -990,7 +814,7 @@
         <div class="item">
             <div class="item-text">
                 <h3 id="h3">10 điểm du lịch tham quan hấp dẫn nhất</h3>
-                <p id="p1">Toạ lạc trên đảo Hòn Tre với những bãi biển trong xanh quanh năm, Vinpearl Land được biết đến như “thiên đường của miền nhiệt đới”</p>
+                <p id="p11">Toạ lạc trên đảo Hòn Tre với những bãi biển trong xanh quanh năm, Vinpearl Land được biết đến như “thiên đường của miền nhiệt đới”</p>
             </div>
         </div>
         <div class="item">
@@ -999,8 +823,70 @@
         <div class="item">
             <div class="item-text">
                 <h3 id="h3">10 điểm du lịch tham quan hấp dẫn nhất</h3>
-                <p id="p1">Toạ lạc trên đảo Hòn Tre với những bãi biển trong xanh quanh năm, Vinpearl Land được biết đến như “thiên đường của miền nhiệt đới”</p>
+                <p id="p11">Toạ lạc trên đảo Hòn Tre với những bãi biển trong xanh quanh năm, Vinpearl Land được biết đến như “thiên đường của miền nhiệt đới”</p>
             </div>    
+        </div>
+    </div>
+    <div class="container1">
+        <h2 id="h2">Cẩm nang du lịch</h2>
+ 
+         <div class="section-title">Chuẩn bị trước khi đi:</div>
+         <ul>
+             <li>Lên kế hoạch, đặt vé máy bay/tàu/xe và chỗ ở sớm.</li>
+             <li>Chuẩn bị giấy tờ cần thiết (CCCD, hộ chiếu, visa, bảo hiểm).</li>
+             <li>Đóng gói hành lý gọn nhẹ, mang theo quần áo phù hợp, thuốc men, sạc dự phòng.</li>
+         </ul>
+ 
+         <div class="section-title">Trong khi du lịch:</div>
+         <ul>
+             <li>Tìm hiểu phương tiện di chuyển.</li>
+             <li>Giữ tư trang cẩn thận, tránh lừa đảo, móc túi.</li>
+             <li>Trải nghiệm các điều mới lạ, tôn trọng văn hóa địa phương, lưu giữ kỷ niệm.</li>
+         </ul>
+ 
+         <div class="section-title">Sau chuyến đi:</div>
+         <ul>
+             <li>Kiểm tra hành lý trước khi về.</li>
+             <li>Tổng kết chi tiêu, chia sẻ kinh nghiệm du lịch.</li>
+         </ul>
+ 
+         <div class="note">
+             Luôn có tiền dự phòng, học vài câu giao tiếp nếu đi nước ngoài, mang theo túi đựng đồ/rác.
+         </div>
+ 
+         <div class="more">
+             <a href="https://vnexpress.net/cam-nang-du-lich-da-nang-4470111.html">Xem thêm ›</a>
+         </div> 
+     </div>
+
+     <div class="lydo">
+        <h2>Lý do nên chọn...... ?</h2>
+
+        <div class="container2">
+            <div class="no">
+            <div class="title blue">
+                <img src="https://storage.timviec365.vn/timviec365/pictures/images/thanh-tra-la-gi(1).png" alt="icon">
+                Đáp ứng mọi nhu cầu
+            </div>
+            <p>Từ chuyến bay, lưu trú, đến điểm tham quan, ẩm thực.<br>
+            Bạn có thể tin chọn sản phẩm và Hướng Dẫn Du Lịch của chúng tôi.</p>
+            </div>
+
+            <div class="no">
+            <div class="title green">
+                <img src="https://img.icons8.com/color/48/checked--v1.png" alt="icon">
+                Thông tin hữu ích
+            </div>
+            <p>Cung cấp cho bạn những thông tin thú vị và cần thiết cho bạn khi đặt chân đến Đà Nẵng.</p>
+            </div>
+
+            <div class="no">
+            <div class="title teal">
+                <img src="https://img.icons8.com/fluency/48/shield.png" alt="icon">
+                Thanh toán an toàn và thuận tiện
+            </div>
+            <p>Tận hưởng nhiều cách thanh toán an toàn, bằng loại tiền thuận tiện nhất cho bạn.</p>
+            </div>
         </div>
     </div>
 
