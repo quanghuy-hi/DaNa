@@ -196,6 +196,40 @@
             object-fit: cover; /* Đảm bảo ảnh không bị biến dạng, mà vẫn đầy đủ */
             border-radius: 8px;
         }
+        .subscribe-section {
+      background: url('sub.jpg') center/cover no-repeat; 
+      padding: 100px 0;
+      color: white;
+      text-align: center;
+      position: relative;
+      margin-top: 40px;
+    }
+    .subscribe-section::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 123, 255, 0.6);
+      z-index: 0;
+    }
+    .subscribe-section .content {
+      position: relative;
+      z-index: 1;
+    }
+    .subscribe-section input {
+      padding: 10px;
+      width: 300px;
+    }
+    .subscribe-section button {
+      padding: 10px 20px;
+      background: orange;
+      border: none;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.5s ease-in-out;
+    }
+    .subscribe-section button:hover{
+        background-color: rgba(0, 0, 255, 0.61);
+    }
         footer {
             background: #111111bb;
             color: #eee;
@@ -405,6 +439,15 @@
             <a href="#">Đọc thêm...</a>
         </div>
     </div>
+
+    <section class="subscribe-section">
+        <div class="content">
+          <h1>ĐĂNG KÝ NHẬN ƯU ĐÃI TỪ CHÚNG TÔI</h1>
+          <p>TRỞ THÀNH NHỮNG NGƯỜI CÓ THÔNG TIN NHANH NHẤT</p>
+          <input type="email" placeholder="Email của bạn">
+          <button>ĐĂNG KÍ</button>
+        </div>
+      </section>
 
     <footer>
         <div class="logo">Travel<span>✈️</span></div>
